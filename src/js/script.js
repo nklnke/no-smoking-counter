@@ -55,14 +55,14 @@ function update() {
   var day = Math.round(noSmokingTime),
     dayStr = day.toString(),
     dayEndOfWord = dayStr.substr(dayStr.length - 1),
-    cigarettenWord; // = ["сигарет", "сигарета", "сигареты"];
+    dayWord;
 
   if ((dayEndOfWord >= 5 && dayEndOfWord <= 9) || dayEndOfWord == 0) {
     dayWord = "дней";
   } else if (dayEndOfWord == 1) {
     dayWord = "день";
   } else if (dayEndOfWord >= 2 && dayEndOfWord <= 4) {
-    dayWword = "дня";
+    dayWord = "дня";
   }
 
   // Склонение сигарет
@@ -90,8 +90,8 @@ function update() {
 }
 
 function start() {
-  update(); // начать тут же, не ждать 1 секунду, пока setInterval сработает
   setInterval(update, 1000);
+  update(); // начать тут же, не ждать 1 секунду, пока setInterval сработает
 }
 
 start();
