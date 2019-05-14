@@ -19,6 +19,8 @@ function update() {
         zhizhCosts * (noSmokingTime / 30)) /
       noSmokingTime;
 
+  // Вывод значений
+
   document.getElementById("noSmokingTime").innerHTML = Math.round(
     noSmokingTime
   );
@@ -47,6 +49,25 @@ function update() {
     daySavings /
     (24 * 60 * 60)
   ).toFixed(5);
+
+  // Склонение сигарет
+
+  var cigaretten = Math.round(noSmokingTime * 20 * 1.25),
+    cigarettenStr = cigaretten.toString(),
+    endOfWord = cigarettenStr.substr(cigarettenStr.length - 1),
+    word; // = ["сигарет", "сигарета", "сигареты"];
+
+  if ((endOfWord >= 5 && endOfWord <= 9) || endOfWord == 0) {
+    word = "сигарет";
+  } else if (endOfWord == 1) {
+    word = "сигарета";
+  } else if (endOfWord >= 2 && endOfWord <= 4) {
+    word = "сигареты";
+  }
+
+  // Вывод единиц измерения
+  
+  document.getElementById("endOfCigs").innerHTML = word;
 }
 
 function start() {
