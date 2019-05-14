@@ -70,13 +70,10 @@ function update() {
     cigarettenStr = cigaretten.toString(),
     cigarettenEndOfWord = cigarettenStr.substr(cigarettenStr.length - 1);
 
-  if (
-    (cigarettenEndOfWord >= 5 && cigarettenEndOfWord <= 9) ||
-    cigarettenEndOfWord == 0
-  ) {
+  if ((cigarettenEndOfWord >= 5 && cigarettenEndOfWord <= 9) || cigarettenEndOfWord == 0) {
     cigarettenWord = "сигарет";
   } else if (cigarettenEndOfWord == 1) {
-    cigarettenWord = "сигарета";
+    cigarettenWord = "сигарету";
   } else if (cigarettenEndOfWord >= 2 && cigarettenEndOfWord <= 4) {
     cigarettenWord = "сигареты";
   }
