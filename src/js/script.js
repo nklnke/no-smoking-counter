@@ -54,8 +54,7 @@ function update() {
 
   var day = Math.round(noSmokingTime),
     dayStr = day.toString(),
-    dayEndOfWord = dayStr.substr(dayStr.length - 1),
-    dayWord;
+    dayEndOfWord = dayStr.substr(dayStr.length - 1);
 
   if ((dayEndOfWord >= 5 && dayEndOfWord <= 9) || dayEndOfWord == 0) {
     dayWord = "дней";
@@ -69,8 +68,7 @@ function update() {
 
   var cigaretten = Math.round(noSmokingTime * 20 * 1.25),
     cigarettenStr = cigaretten.toString(),
-    cigarettenEndOfWord = cigarettenStr.substr(cigarettenStr.length - 1),
-    cigarettenWord; // = ["сигарет", "сигарета", "сигареты"];
+    cigarettenEndOfWord = cigarettenStr.substr(cigarettenStr.length - 1);
 
   if (
     (cigarettenEndOfWord >= 5 && cigarettenEndOfWord <= 9) ||
@@ -85,8 +83,8 @@ function update() {
 
   // Вывод единиц измерения
 
-  document.getElementById("endOfCigs").innerHTML = cigarettenWord;
   document.getElementById("endOfNoSmokingTime").innerHTML = dayWord;
+  document.getElementById("endOfCigs").innerHTML = cigarettenWord;
 }
 
 function start() {
