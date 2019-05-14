@@ -50,29 +50,48 @@ function update() {
     (24 * 60 * 60)
   ).toFixed(5);
 
+  // Склонение дней
+
+  var day = Math.round(noSmokingTime),
+    dayStr = day.toString(),
+    dayEndOfWord = dayStr.substr(dayStr.length - 1),
+    cigarettenWord; // = ["сигарет", "сигарета", "сигареты"];
+
+  if ((dayEndOfWord >= 5 && dayEndOfWord <= 9) || dayEndOfWord == 0) {
+    dayWord = "дней";
+  } else if (dayEndOfWord == 1) {
+    dayWord = "день";
+  } else if (dayEndOfWord >= 2 && dayEndOfWord <= 4) {
+    dayWword = "дня";
+  }
+
   // Склонение сигарет
 
   var cigaretten = Math.round(noSmokingTime * 20 * 1.25),
     cigarettenStr = cigaretten.toString(),
-    endOfWord = cigarettenStr.substr(cigarettenStr.length - 1),
-    word; // = ["сигарет", "сигарета", "сигареты"];
+    cigarettenEndOfWord = cigarettenStr.substr(cigarettenStr.length - 1),
+    cigarettenWord; // = ["сигарет", "сигарета", "сигареты"];
 
-  if ((endOfWord >= 5 && endOfWord <= 9) || endOfWord == 0) {
-    word = "сигарет";
-  } else if (endOfWord == 1) {
-    word = "сигарета";
-  } else if (endOfWord >= 2 && endOfWord <= 4) {
-    word = "сигареты";
+  if (
+    (cigarettenEndOfWord >= 5 && cigarettenEndOfWord <= 9) ||
+    cigarettenEndOfWord == 0
+  ) {
+    cigarettenWord = "сигарет";
+  } else if (cigarettenEndOfWord == 1) {
+    cigarettenWord = "сигарета";
+  } else if (cigarettenEndOfWord >= 2 && cigarettenEndOfWord <= 4) {
+    cigarettenWord = "сигареты";
   }
 
   // Вывод единиц измерения
-  
-  document.getElementById("endOfCigs").innerHTML = word;
+
+  document.getElementById("endOfCigs").innerHTML = cigarettenWord;
+  document.getElementById("endOfNoSmokingTime").innerHTML = dayWord;
 }
 
 function start() {
-  setInterval(update, 1000);
   update(); // начать тут же, не ждать 1 секунду, пока setInterval сработает
+  setInterval(update, 1000);
 }
 
 start();
