@@ -1,6 +1,6 @@
 # no-smoking-counter
 
-## https://canonium.com/articles/electron-desktop-app-introduction
+### https://canonium.com/articles/electron-desktop-app-introduction
 
 `$ npm i -g electron-packager`
 
@@ -14,4 +14,4 @@
 
 `$ npm run build`
 
-### Могут быть проблемы с .git - лучше удалить электроновский
+#### Могут быть проблемы с .git - лучше удалить электроновский
