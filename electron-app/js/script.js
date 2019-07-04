@@ -9,9 +9,9 @@ function update() {
       (currentDate.getTime() - lastTime.getTime()) / (1000 * 60 * 60 * 24),
     cigCost = (115 + (107.25 + 143) / 2) / 2,
     startingCosts = 2990 + 1990 + 390 * 2 + 100,
-    zhizhCosts = 500,
+    zhizhCosts = 400,
     tempedCosts = 650 + 200 + 270 + 690 + 200 + 200 + 250 + 250 + 100 + 300,
-    savedMoney = noSmokingTime * cigCost * 1.25, // Модификатор на 1.15 пачки в день
+    savedMoney = noSmokingTime * cigCost * 1.15, // Модификатор на 1.15 пачки в день
     daySavings =
       (savedMoney -
         startingCosts -
@@ -70,7 +70,10 @@ function update() {
     cigarettenStr = cigaretten.toString(),
     cigarettenEndOfWord = cigarettenStr.substr(cigarettenStr.length - 1);
 
-  if ((cigarettenEndOfWord >= 5 && cigarettenEndOfWord <= 9) || cigarettenEndOfWord == 0) {
+  if (
+    (cigarettenEndOfWord >= 5 && cigarettenEndOfWord <= 9) ||
+    cigarettenEndOfWord == 0
+  ) {
     cigarettenWord = "сигарет";
   } else if (cigarettenEndOfWord == 1) {
     cigarettenWord = "сигарету";
